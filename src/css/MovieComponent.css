@@ -1,0 +1,14 @@
+.movie {
+    margin-left: 20px;
+    width: 500px;
+    display: inline-block;
+    font-size: 30px;
+    font-family: fantasy;
+
+}
+.movie-title-style {
+    text-align: center;
+}
+.movie-vote-style {
+    text-align: center;
+}

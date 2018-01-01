@@ -1,0 +1,19 @@
+body {
+    margin: 40px;
+    padding: 0;
+    font-family: sans-serif;
+
+}
+.App-logo {
+    height: 80px;
+    text-align: center;
+    display: inline-block;
+
+}
+.App-header {
+
+    height: 70px;
+    padding: 20px;
+    color: white;
+    text-align: center;
+}

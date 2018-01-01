@@ -1,0 +1,11 @@
+.menu-style {
+    font-family: Georgia;
+    font-size: 20px;
+    list-style-type: none;
+    width: 200px;
+    display: inline;
+    margin-right: 40px;
+    background: white;
+    padding-left: 40px;
+    padding-right: 40px;
+}

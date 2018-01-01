@@ -1,0 +1,16 @@
+.Link-style {
+    font-family: fantasy;
+    font-size: 35px;
+    list-style-type: none;
+    width: 200px;
+    display: inline;
+    margin-right: 40px;
+    background: white;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 20px;
+
+}
+.Movies-style {
+    text-align: center;
+}
