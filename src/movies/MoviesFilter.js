@@ -6,8 +6,6 @@ import MovieComponent from "../movies/MovieComponent";
 import MovieDescription from "../movies/MovieDescription";
 import fetch from 'isomorphic-fetch';
 
-const history = createBrowserHistory();
-
 const TopRated = () => (
     <div>
         <h2>Top rated</h2>
@@ -18,26 +16,41 @@ const NowPlaying = () => (
         <h2>Now playing</h2>
     </div>
 );
+const history = createBrowserHistory();
 
 class MoviesFilter extends React.Component {
+
     constructor() {
         super();
         this.state = {
             movies: []
         };
+
+        this.handleSearch = this.handleSearch.bind(this);
     }
 
     handleSearch(event) {
-        let searchQuery = event.target.value.toLowerCase();
 
-        fetch('https://api.themoviedb.org/3/search/movie?api_key=10b612f37fb4e2a001c6f5f05f608344&query=' + searchQuery)
-            .then((response) => response.json())
-            .then((responseJson) => {
-                this.state.movies = (responseJson.results)
-            })
-            .catch((error) => {
-                console.error(error);
-            });
+        let searchQuery = event.target.value.toLowerCase();
+        if (searchQuery && searchQuery!=="") {
+            fetch('https://api.themoviedb.org/3/search/movie?api_key=10b612f37fb4e2a001c6f5f05f608344&query=' + searchQuery)
+                .then((response) => response.json())
+                .then((responseJson) => {
+                    console.log(responseJson.results);
+                    this.updateFilms(responseJson.results);
+                })
+                .catch((error) => {
+                    console.error(error);
+                });
+        } else {
+            this.updateFilms([]);
+        }
+    }
+
+    updateFilms(movies) {
+        this.setState({
+            movies: (movies)
+        });
     }
 
     render() {
